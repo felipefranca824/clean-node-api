@@ -14,6 +14,7 @@ services:
     command: npm start
     volumes: 
       - ./dist:/usr/src/api-clean-node/dist
+      - ./package.json:/usr/src/api-clean-node/package.json
     ports:
       - "5050:5050"
     links:
