@@ -8,12 +8,12 @@ services:
     ports:
       - "27017:27017"
   api:
-    build: .
+    image: node:18
+    working_dir: /usr/src/api-clean-node
     restart: always
-    image: api-clean-node
-    command: npm start
+    command: bash -c "npm install --omit=dev && npm start"
     volumes: 
-      - ./dist:/usr/src/api-clean-node/dist
+      - ./dist/:/usr/src/api-clean-node/dist/
       - ./package.json:/usr/src/api-clean-node/package.json
     ports:
       - "5050:5050"
