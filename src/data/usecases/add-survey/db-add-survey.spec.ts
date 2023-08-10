@@ -12,7 +12,7 @@ const makeFakeSurveyData = (): AddSurveyModel => ({
   ]
 })
 
-const makeAddSurveyrepositoryStub = (): AddSurveyRepository => {
+const makeAddSurveyRepositoryStub = (): AddSurveyRepository => {
   class AddSurveyRepositoryStub implements AddSurveyRepository {
     async add (surveyData: AddSurveyModel): Promise<void> {
 
@@ -28,7 +28,7 @@ interface SutTypes {
 }
 
 const makeSut = (): SutTypes => {
-  const addSurveyRepositoryStub = makeAddSurveyrepositoryStub()
+  const addSurveyRepositoryStub = makeAddSurveyRepositoryStub()
   const sut = new DbAddSurvey(addSurveyRepositoryStub)
 
   return {
