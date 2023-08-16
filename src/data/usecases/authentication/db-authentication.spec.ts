@@ -60,7 +60,7 @@ const makeUpdateAccessTokenRepository = (): UpdateAccessTokenRepository => {
   return new UpdateAccessTokenRepositoryStub()
 }
 
-interface SutTypes {
+type SutTypes = {
   hashCompareStub: HashComparer
   encrypterStub: Encrypter
   loadAccountByEmailRepositoryStub: LoadAccountByEmailRepository
