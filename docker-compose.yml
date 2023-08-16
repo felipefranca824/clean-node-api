@@ -12,6 +12,8 @@ services:
     working_dir: /usr/src/api-clean-node
     restart: always
     command: bash -c "npm install --omit=dev && npm start"
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/clean-node-api
     volumes: 
       - ./dist/:/usr/src/api-clean-node/dist/
       - ./package.json:/usr/src/api-clean-node/package.json
