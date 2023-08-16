@@ -1,7 +1,7 @@
-import { type LogErrorRepository } from '../../data/protocols/db/log/log-error-repository'
-import { type AccountModel } from '../../domain/models/account'
-import { ok, serverError } from '../../presentation/helpers/http/http-helper'
-import { type Controller, type HttpRequest, type HttpResponse } from '../../presentation/protocols'
+import { type LogErrorRepository } from '@/data/protocols/db/log/log-error-repository'
+import { type AccountModel } from '@/domain/models/account'
+import { ok, serverError } from '@/presentation/helpers/http/http-helper'
+import { type Controller, type HttpRequest, type HttpResponse } from '@/presentation/protocols'
 import { LogControllerDecorator } from './log-controller-decorator'
 
 const makeController = (): Controller => {

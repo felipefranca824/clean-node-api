@@ -1,6 +1,6 @@
-import { type AddSurveyModel } from '../../../domain/usecases/add-survey'
+
 import { DbAddSurvey } from './db-add-survey'
-import { type AddSurveyRepository } from './db-add-survey-protocols'
+import { type AddSurveyRepository, type AddSurveyModel } from './db-add-survey-protocols'
 import MockDate from 'mockdate'
 
 const makeFakeSurveyData = (): AddSurveyModel => ({

@@ -1,6 +1,6 @@
-import { EmailInUseError } from '../../../errors'
-import { badRequest, serverError, ok, forbidden } from '../../../helpers/http/http-helper'
-import { type HttpRequest, type Controller, type HttpResponse } from '../../../protocols'
+import { EmailInUseError } from '@/presentation/errors'
+import { badRequest, serverError, ok, forbidden } from '@/presentation/helpers/http/http-helper'
+import { type HttpRequest, type Controller, type HttpResponse } from '@/presentation/protocols'
 import { type Authentication } from '../login/login-controller-protocols'
 import { type Validation, type AddAccount } from './signup-controller-protocols'
 

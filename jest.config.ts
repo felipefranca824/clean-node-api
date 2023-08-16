@@ -14,7 +14,10 @@ export default {
   },
   clearMocks: true,
   collectCoverage: true,
-  coverageProvider: 'v8'
+  coverageProvider: 'v8',
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/$1'
+  }
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
