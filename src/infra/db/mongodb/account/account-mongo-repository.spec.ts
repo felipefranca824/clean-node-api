@@ -70,7 +70,7 @@ describe('Account Mongo Repository', () => {
         password: 'any_password'
       })
       const id = result.insertedId.toString()
-      console.log(id)
+
       await sut.updateAccessToken(id, 'any_token')
       const account = await accountCollection.findOne({ _id: new ObjectId(id) })
       expect(account).toBeTruthy()
