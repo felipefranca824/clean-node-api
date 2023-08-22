@@ -17,5 +17,14 @@ export const MongoHelper = {
   map: (collection: InsertOneResult<Document>, model: any): any => {
     const id = collection.insertedId.toString()
     return Object.assign({}, model, { id })
+  },
+
+  mapCollection: (collection: any[]): any[] => {
+    return collection.map(c => MongoHelper.mapOne(c))
+  },
+
+  mapOne: (data: any): any => {
+    const { _id, ...colecctionWithoutId } = data
+    return Object.assign({}, colecctionWithoutId, { id: _id })
   }
 }
