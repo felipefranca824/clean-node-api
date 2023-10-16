@@ -3,7 +3,7 @@ import {
   type LoadAccountByEmailRepository,
   type Encrypter,
   type HashComparer,
-  type AuthenticationModel,
+  type AuthenticationParams,
   type Authentication
 } from './db-authentication-protocols'
 
@@ -15,7 +15,7 @@ export class DbAuthentication implements Authentication {
     private readonly updateAccessTokenRepositoryStub: UpdateAccessTokenRepository
   ) {}
 
-  async auth (authentication: AuthenticationModel): Promise<string | null> {
+  async auth (authentication: AuthenticationParams): Promise<string | null> {
     const account = await this.loadAccountByEmailRepository.loadByEmail(authentication.email)
     if (account) {
       const isValid = await this.hasComparer.compare(authentication.password, account.password)

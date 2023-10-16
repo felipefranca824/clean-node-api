@@ -1,12 +1,12 @@
 import { type LoadSurveysRepository } from '@/data/protocols/db/survey/load-surveys-repository'
-import { type AddSurveyModel, type AddSurveyRepository } from '@/data/usecases/survey/add-survey/db-add-survey-protocols'
+import { type AddSurveyParams, type AddSurveyRepository } from '@/data/usecases/survey/add-survey/db-add-survey-protocols'
 import { type SurveyModel } from '@/domain/models/survey'
 import { MongoHelper } from '../helpers/mongo-helper'
 import { type LoadSurveyByIdRepository } from '@/data/usecases/survey/load-survey-by-id/db-load-survey-by-id-protocols'
 import { ObjectId } from 'mongodb'
 
 export class SurveyMongoRepository implements AddSurveyRepository, LoadSurveysRepository, LoadSurveyByIdRepository {
-  async add (surveyData: AddSurveyModel): Promise<void> {
+  async add (surveyData: AddSurveyParams): Promise<void> {
     const surveyCollection = MongoHelper.getCollection('surveys')
     await surveyCollection.insertOne(surveyData)
   }
