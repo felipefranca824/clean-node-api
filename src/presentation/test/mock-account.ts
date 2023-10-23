@@ -7,7 +7,7 @@ import { type LoadAccountByToken } from '@/domain/usecases/account/load-account-
 export const mockAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
     async add (acount: AddAccountParams): Promise<AccountModel | null | undefined> {
-      return await new Promise(resolve => { resolve(mockAccountModel()) })
+      return await Promise.resolve(mockAccountModel())
     }
   }
 
@@ -17,7 +17,7 @@ export const mockAddAccount = (): AddAccount => {
 export const mockAuthentication = (): Authentication => {
   class AuthenticationStub implements Authentication {
     async auth (authentication: AuthenticationParams): Promise<string | null> {
-      return await new Promise(resolve => { resolve('any_token') })
+      return await Promise.resolve('any_token')
     }
   }
 

@@ -7,7 +7,7 @@ import { type LoadAccountByTokenRepository } from '../protocols/db/account/load-
 export const mockAddAccountRepository = (): AddAccountRepository => {
   class AddAccountRepositoryStub implements AddAccountRepository {
     async add (accountData: AddAccountParams): Promise<AccountModel> {
-      return await new Promise(resolve => { resolve(mockAccountModel()) })
+      return await Promise.resolve(mockAccountModel())
     }
   }
   return new AddAccountRepositoryStub()
@@ -16,7 +16,7 @@ export const mockAddAccountRepository = (): AddAccountRepository => {
 export const mockLoadAccountByEmailRepository = (): LoadAccountByEmailRepository => {
   class LoadAccountByEmailRepositoryStub implements LoadAccountByEmailRepository {
     async loadByEmail (email: string): Promise<AccountModel> {
-      return await new Promise(resolve => { resolve(mockAccountModel()) })
+      return await Promise.resolve(mockAccountModel())
     }
   }
 

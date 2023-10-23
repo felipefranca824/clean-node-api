@@ -7,7 +7,7 @@ import { type LoadSurveys } from '@/domain/usecases/survey/load-surveys'
 export const mockAddSurvey = (): AddSurvey => {
   class AddSurveyStub implements AddSurvey {
     async add (data: AddSurveyParams): Promise<void> {
-      await new Promise<void>(resolve => { resolve() })
+      await Promise.resolve()
     }
   }
   return new AddSurveyStub()
