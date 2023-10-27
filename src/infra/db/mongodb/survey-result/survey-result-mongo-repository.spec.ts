@@ -20,7 +20,7 @@ describe('Survey Mongo Repository', () => {
     surveyCollection = MongoHelper.getCollection('surveys')
     await surveyCollection.deleteMany({})
 
-    surveyResultCollection = MongoHelper.getCollection('surveysResults')
+    surveyResultCollection = MongoHelper.getCollection('surveyResults')
     await surveyResultCollection.deleteMany({})
 
     accountCollection = MongoHelper.getCollection('accounts')
